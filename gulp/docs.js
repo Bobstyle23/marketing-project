@@ -32,19 +32,21 @@ const notificationConfig = (title) => {
 
 // NOTE: include html files into main html
 gulp.task("html:docs", () => {
-  return gulp
-    .src(["./src/html/**/*.html", "!./src/components/*.html"])
-    .pipe(changed("./docs/"))
-    .pipe(plumber(notificationConfig("HTML")))
-    .pipe(
-      fileInclude({
-        prefix: "@@",
-        basepath: "@file",
-      }),
-    )
-    .pipe(webpHTML())
-    .pipe(htmlclean())
-    .pipe(gulp.dest("./docs/"));
+  return (
+    gulp
+      .src(["./src/html/**/*.html", "!./src/components/*.html"])
+      .pipe(changed("./docs/"))
+      .pipe(plumber(notificationConfig("HTML")))
+      .pipe(
+        fileInclude({
+          prefix: "@@",
+          basepath: "@file",
+        }),
+      )
+      // .pipe(webpHTML())
+      // .pipe(htmlclean())
+      .pipe(gulp.dest("./docs/"))
+  );
 });
 
 // NOTE: compile SASS
@@ -68,11 +70,6 @@ gulp.task("sass:docs", () => {
 gulp.task("images:docs", () => {
   return gulp
     .src("./src/img/**/*", { encoding: false })
-    .pipe(changed("./docs/img/"))
-    .pipe(webp())
-    .pipe(gulp.dest("./docs/img/"))
-
-    .pipe(gulp.src("./src/img/**/*"))
     .pipe(changed("./docs/img/"))
     .pipe(imageMin({ verbose: true }))
     .pipe(gulp.dest("./docs/img/"));

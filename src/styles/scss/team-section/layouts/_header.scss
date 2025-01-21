@@ -1,0 +1,35 @@
+.team-section-header {
+  @extend %flexbox;
+  margin-bottom: 4.8rem;
+  text-align: center;
+
+  &__team {
+    @extend %text-base;
+    font-weight: 600;
+    color: map-get($map: $text-colors, $key: brand);
+    margin-bottom: 1.2rem;
+  }
+
+  &__title {
+    @extend %text-3xl;
+    font-weight: 600;
+    color: map-get($map: $text-colors, $key: primary);
+    margin-bottom: 2rem;
+  }
+
+  &__description {
+    @extend %text-xl;
+    color: map-get($map: $text-colors, $key: secondary);
+  }
+}
+
+@include respond-to($breakpoint-tablets) {
+  .team-section-header {
+    margin-bottom: 6.4rem;
+
+    &__title {
+      font-size: 4.8rem;
+      line-height: 1;
+    }
+  }
+}

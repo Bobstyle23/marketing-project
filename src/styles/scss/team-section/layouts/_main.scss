@@ -1,0 +1,22 @@
+.team-section-main {
+  max-width: 144rem;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 0.4rem;
+  padding: 4.8rem 1.6rem;
+  box-shadow: $box-shadow-mobile;
+}
+
+@include respond-to($breakpoint-tablets) {
+  .team-section-main {
+    padding: 6.4rem 1.6rem;
+    box-shadow: $box-shadow-tablet;
+  }
+}
+
+@include respond-to($breakpoint-desktops) {
+  .team-section-main {
+    padding: 9.6rem 6.4rem;
+    box-shadow: $box-shadow-desktop;
+  }
+}

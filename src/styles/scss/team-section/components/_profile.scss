@@ -1,0 +1,24 @@
+.profile {
+  @extend %flexbox;
+  align-items: stretch;
+  gap: 2.4rem;
+
+  &__name {
+    @extend %text-xl;
+    font-weight: 600;
+    color: map-get($map: $text-colors, $key: primary);
+    margin-bottom: 0.4rem;
+  }
+
+  &__job {
+    @extend %text-lg;
+    font-weight: 500;
+    color: map-get($map: $text-colors, $key: brand);
+    margin-bottom: 1.6rem;
+  }
+
+  &__introduction {
+    @extend %text-base;
+    color: map-get($map: $text-colors, $key: secondary);
+  }
+}
