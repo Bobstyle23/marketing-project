@@ -1,4 +1,4 @@
-.hero {
+.section-hero {
   @extend %grid;
   row-gap: 4.8rem;
   padding: 4.8rem 1.6rem;
@@ -50,7 +50,7 @@
 }
 
 @include respond-to($breakpoint-tablets) {
-  .hero {
+  .section-hero {
     padding: 6.4rem 1.6rem;
     row-gap: 3.2rem;
     justify-items: baseline;
@@ -86,7 +86,7 @@
 }
 
 @include respond-to($breakpoint-desktops) {
-  .hero {
+  .section-hero {
     grid-template-columns: 48.8rem 1fr;
     column-gap: 3.2rem;
     padding: 9.6rem;
