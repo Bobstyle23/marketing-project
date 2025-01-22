@@ -1,0 +1,139 @@
+.features-section-side-hero {
+  gap: 4.8rem;
+
+  &,
+  &__header,
+  &__details,
+  &__detail div {
+    @extend %flexbox;
+  }
+
+  &__header {
+    text-align: center;
+    gap: 2rem;
+  }
+
+  &__title,
+  &__subtitle {
+    @extend %font-weight-semibold;
+  }
+
+  &__subtitle {
+    @extend %text-base;
+    color: map-get($map: $text-colors, $key: brand);
+    margin-bottom: 1.2rem;
+  }
+
+  &__title {
+    @extend %text-3xl;
+    color: map-get($map: $text-colors, $key: primary);
+  }
+
+  &__description {
+    @extend %text-lg;
+    color: map-get($map: $text-colors, $key: secondary);
+  }
+
+  &__content {
+    @extend %grid;
+    justify-items: start;
+    row-gap: 4.8rem;
+  }
+
+  &__details {
+    align-items: flex-start;
+    gap: 4rem;
+  }
+
+  &__detail {
+    @extend %grid;
+    grid-template-columns: 4.8rem 1fr;
+    align-items: start;
+    column-gap: 2rem;
+
+    div {
+      align-items: flex-start;
+      gap: 0.8rem;
+      padding: 1rem 0;
+    }
+    h4 {
+      @extend %text-lg;
+      @extend %font-weight-semibold;
+      color: map-get($map: $text-colors, $key: primary);
+    }
+    p {
+      @extend %text-base;
+      color: map-get($map: $text-colors, $key: secondary);
+    }
+  }
+
+  &__image {
+    position: relative;
+    overflow: hidden;
+
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 319 / 180;
+    border-radius: 0.8rem;
+    box-shadow:
+      0 10px 15px -3px rgba($color: #000, $alpha: 0.1),
+      0 4px 6px -2px rgba($color: #000, $alpha: 0.05);
+  }
+}
+
+@include respond-to($breakpoint-tablets) {
+  .features-section-side-hero {
+    gap: 6.4rem;
+
+    &__title {
+      font-size: 4.8rem;
+      line-height: 1;
+    }
+
+    &__description {
+      font-size: 2rem;
+      width: 70%;
+    }
+
+    &__image {
+      aspect-ratio: 704 / 394;
+    }
+  }
+}
+
+@include respond-to($breakpoint-desktops) {
+  .features-section-side-hero {
+    &__content {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 3.2rem;
+    }
+
+    &__details {
+      max-width: 59.2rem;
+    }
+
+    &__header {
+      &--left {
+        width: 89.6rem;
+        padding: 0 12rem;
+      }
+    }
+
+    &__image {
+      align-self: stretch;
+      aspect-ratio: 592 / 394;
+
+      &--left {
+        align-self: start;
+      }
+    }
+
+    &__description {
+      width: 100%;
+
+      &--left {
+        text-wrap: balance;
+      }
+    }
+  }
+}
