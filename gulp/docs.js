@@ -44,7 +44,7 @@ gulp.task("html:docs", () => {
         }),
       )
       // .pipe(webpHTML())
-      // .pipe(htmlclean())
+      .pipe(htmlclean())
       .pipe(gulp.dest("./docs/"))
   );
 });
