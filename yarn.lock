@@ -1934,15 +1934,16 @@ commander@^2.20.0, commander@^2.8.1:
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
 
-common-gulp-config@^1.0.19:
-  version "1.0.19"
-  resolved "https://registry.yarnpkg.com/common-gulp-config/-/common-gulp-config-1.0.19.tgz#d293cc7081ec1fb9a548313e83ff11fda7aeecc4"
-  integrity sha512-BkK5kH3bmShR6XMMy3Cr4sD8507yaUnBHn0GF7nlM/9uznuynUnVZWidXctazZGChfSDAw5tITw0k4txvenOUw==
+common-gulp-config@^1.0.26:
+  version "1.0.26"
+  resolved "https://registry.yarnpkg.com/common-gulp-config/-/common-gulp-config-1.0.26.tgz#26316b697772ddfcac848fa3d93877a7713f4a56"
+  integrity sha512-HU2vcK3vmmoruPsrZEOYajuhSMQ5Rsbdq0ItDSCRQBJ7AQVQDbIJDLU/GOcv/C8sQnE1QfnCYQGWzv1+9flkpA==
   dependencies:
     "@babel/core" "^7.26.0"
     "@babel/preset-env" "^7.26.0"
     "@bobstyle23/common-styles" "^1.0.15"
     css-loader "^7.1.2"
+    diff "^7.0.0"
     fs-extra "^11.3.0"
     gulp "^5.0.0"
     gulp-autoprefixer "^8.0.0"
@@ -2411,6 +2412,11 @@ detect-newline@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/detect-newline/-/detect-newline-2.1.0.tgz#f41f1c10be4b00e87b5f13da680759f2c5bfd3e2"
   integrity sha512-CwffZFvlJffUg9zZA0uqrjQayUTC8ob94pnr5sFwaVv3IOmkfUHcWH+jXaQK3askE51Cqe8/9Ql/0uXNwqZ8Zg==
+
+diff@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/diff/-/diff-7.0.0.tgz#3fb34d387cd76d803f6eebea67b921dab0182a9a"
+  integrity sha512-PJWHUb1RFevKCwaFA9RlG5tCd+FO5iRh9A8HEtkmBH2Li03iJriB6m6JIN4rGz3K3JLawI7/veA1xzRKP6ISBw==
 
 dir-glob@^3.0.1:
   version "3.0.1"

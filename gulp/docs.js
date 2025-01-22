@@ -32,21 +32,25 @@ const notificationConfig = (title) => {
 
 // NOTE: include html files into main html
 gulp.task("html:docs", () => {
-  return (
-    gulp
-      .src(["./src/html/**/*.html", "!./src/components/*.html"])
-      .pipe(changed("./docs/"))
-      .pipe(plumber(notificationConfig("HTML")))
-      .pipe(
-        fileInclude({
-          prefix: "@@",
-          basepath: "@file",
-        }),
-      )
-      // .pipe(webpHTML())
-      .pipe(htmlclean())
-      .pipe(gulp.dest("./docs/"))
-  );
+  return gulp
+    .src(["./src/html/**/*.html", "!./src/components/*.html"])
+    .pipe(changed("./docs/html/"))
+    .pipe(plumber(notificationConfig("HTML")))
+    .pipe(
+      fileInclude({
+        prefix: "@@",
+        basepath: "@file",
+      }),
+    )
+    .pipe(htmlclean())
+    .pipe(
+      gulp.dest((file) => {
+        if (file.basename === "index.html") {
+          return "./docs/";
+        }
+        return "./docs/html/";
+      }),
+    );
 });
 
 // NOTE: compile SASS
