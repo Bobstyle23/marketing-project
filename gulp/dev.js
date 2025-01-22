@@ -10,6 +10,7 @@ const notify = require("gulp-notify");
 const webpack = require("webpack-stream");
 const sassGlob = require("gulp-sass-glob");
 const changed = require("gulp-changed");
+const replace = require("gulp-replace");
 
 const notificationConfig = (title) => {
   return {
@@ -34,6 +35,12 @@ gulp.task("html:dev", () => {
       }),
     )
     .pipe(
+      replace(
+        /(?<=src=|href=|srcset=)(['"])(\.(\.)?\/)*(img|images|fonts|css|scss|sass|js|files|audio|video)(\/[^\/'"]+(\/))?([^'"]*)\1/gi,
+        "$1./$4$5$7$1",
+      ),
+    )
+    .pipe(
       gulp.dest((file) => {
         if (file.basename === "index.html") {
           return "./build/";
@@ -52,6 +59,12 @@ gulp.task("sass:dev", () => {
     .pipe(sourceMaps.init())
     .pipe(sassGlob())
     .pipe(sass().on("error", sass.logError))
+    .pipe(
+      replace(
+        /(['"]?)(\.\.\/)+(img|images|fonts|css|scss|sass|js|files|audio|video)(\/[^\/'"]+(\/))?([^'"]*)\1/gi,
+        "$1$2$3$4$6$1",
+      ),
+    )
     .pipe(sourceMaps.write())
     .pipe(gulp.dest("./build/css/"));
 });

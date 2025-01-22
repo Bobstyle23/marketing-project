@@ -15,10 +15,9 @@ const groupMedia = require("gulp-group-css-media-queries");
 const changed = require("gulp-changed");
 const csso = require("gulp-csso");
 const htmlclean = require("gulp-htmlclean");
-const webp = require("gulp-webp");
 const autoprefixer = require("gulp-autoprefixer");
-const webpHTML = require("gulp-webp-html");
 const webpCSS = require("gulp-webp-css");
+const replace = require("gulp-replace");
 
 const notificationConfig = (title) => {
   return {
@@ -42,6 +41,12 @@ gulp.task("html:docs", () => {
         basepath: "@file",
       }),
     )
+    .pipe(
+      replace(
+        /(?<=src=|href=|srcset=)(['"])(\.(\.)?\/)*(img|images|fonts|css|scss|sass|js|files|audio|video)(\/[^\/'"]+(\/))?([^'"]*)\1/gi,
+        "$1./$4$5$7$1",
+      ),
+    )
     .pipe(htmlclean())
     .pipe(
       gulp.dest((file) => {
@@ -62,6 +67,12 @@ gulp.task("sass:docs", () => {
     .pipe(sourceMaps.init())
     .pipe(autoprefixer())
     .pipe(sassGlob())
+    .pipe(
+      replace(
+        /(['"]?)(\.\.\/)+(img|images|fonts|css|scss|sass|js|files|audio|video)(\/[^\/'"]+(\/))?([^'"]*)\1/gi,
+        "$1$2$3$4$6$1",
+      ),
+    )
     .pipe(webpCSS())
     .pipe(groupMedia())
     .pipe(sass().on("error", sass.logError))
