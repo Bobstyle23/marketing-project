@@ -4,11 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="./css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Main page</title>
   </head>
   <body>
-    <!-- @@include('./components/hero-section-bullets/hero.html') -->
-
+    <main class="main">
+      <section class="hero-section-bullets-main">
+        @@include('../components/hero-section-bullets/hero-section-bullets.html')
+      </section>
+      <section class="features-section-side-main">
+        @@include('../components/features-section-side/feature-section-side.html')
+      </section>
+      <section class="features-section-side-main">
+        @@include('../components/features-section-side/features-section-side-right.html')
+      </section>
+      <section class="team-section-main">
+        @@include('../components/team-section/team-section.html')
+      </section>
+    </main>
     <script src="./js/index.bundle.js"></script>
   </body>
 </html>
