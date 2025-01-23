@@ -1952,10 +1952,10 @@ commander@^2.20.0, commander@^2.8.1:
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
 
-common-gulp-config@^1.0.29:
-  version "1.0.29"
-  resolved "https://registry.yarnpkg.com/common-gulp-config/-/common-gulp-config-1.0.29.tgz#1e8e73859c808b300994b6c2d7495f2a24337748"
-  integrity sha512-L4rcgWPaE9eGcRd4BImK9yGHyr1r6CXQK4aJntFf3l4Wof4o3jKQodDLyWsA61se7acjXtIytupYZQ1PeyX3Ew==
+common-gulp-config@^1.0.30:
+  version "1.0.30"
+  resolved "https://registry.yarnpkg.com/common-gulp-config/-/common-gulp-config-1.0.30.tgz#802fc801ab33a337366830dce2e3145e2e14c879"
+  integrity sha512-Iu1LHilNAYVzvm92DxF+djJdEvtVB6YqYjNSY1dIRwnRavTDC3N3MGQ1Jzh2acPnXKcVFSYC03RVAzIcVBtPNQ==
   dependencies:
     "@babel/core" "^7.26.0"
     "@babel/preset-env" "^7.26.0"
