@@ -6,7 +6,7 @@
 @include respond-to($breakpoint-tablets) {
   .profiles {
     grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
-    align-items: baseline;
+    align-items: start;
     column-gap: 3.2rem;
     row-gap: 6.4rem;
   }
