@@ -1,0 +1,58 @@
+.features-section-grid {
+  @extend %flexbox;
+  align-items: stretch;
+  gap: 4.8rem;
+
+  &__header {
+    text-align: center;
+
+    h2 {
+      @extend %text-base;
+      @extend %font-weight-semibold;
+      color: map-get($map: $text-colors, $key: brand);
+      margin-bottom: 1.2rem;
+    }
+
+    h1 {
+      @extend %text-3xl;
+      @extend %font-weight-semibold;
+      color: map-get($map: $text-colors, $key: primary);
+      margin-bottom: 2rem;
+    }
+
+    p {
+      @extend %text-lg;
+      color: map-get($map: $text-colors, $key: secondary);
+    }
+  }
+
+  &__contents {
+    @extend %grid;
+    grid-template-columns: 1fr;
+    row-gap: 3.2rem;
+    column-gap: 3.2rem;
+  }
+
+  &__content {
+    @extend %flexbox;
+    text-align: center;
+
+    img {
+      width: 4.8rem;
+      height: 4.8rem;
+      margin-bottom: 2rem;
+    }
+
+    h3 {
+      @extend %text-xl;
+      @extend %font-weight-semibold;
+      color: map-get($map: $text-colors, $key: primary);
+      margin-bottom: 0.8rem;
+    }
+
+    p {
+      @extend %text-base;
+      color: map-get($map: $text-colors, $key: secondary);
+    }
+  }
+}
