@@ -29,6 +29,7 @@
   &__contents {
     @extend %grid;
     grid-template-columns: 1fr;
+    align-items: start;
     row-gap: 3.2rem;
     column-gap: 3.2rem;
   }
@@ -53,6 +54,27 @@
     p {
       @extend %text-base;
       color: map-get($map: $text-colors, $key: secondary);
+    }
+  }
+}
+
+@include respond-to($breakpoint-tablets) {
+  .features-section-grid {
+    gap: 6.4rem;
+
+    &__header {
+      h1 {
+        font-size: 4.8rem;
+        line-height: 1;
+      }
+
+      p {
+        font-size: 2rem;
+      }
+    }
+
+    &__contents {
+      grid-template-columns: repeat(auto-fit, minmax(33.6rem, 1fr));
     }
   }
 }
