@@ -78,3 +78,17 @@
     }
   }
 }
+
+@include respond-to($breakpoint-desktops) {
+  .features-section-grid {
+    &__header {
+      p {
+        padding: 0 16rem;
+      }
+    }
+
+    &__contents {
+      row-gap: 7.2rem;
+    }
+  }
+}

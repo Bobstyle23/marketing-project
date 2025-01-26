@@ -1,15 +1,22 @@
 .features-section-grid-main {
+  max-width: 144rem;
+  margin: 0 auto;
+  background-color: map-get($map: $background-colors, $key: primary);
+  border-radius: 0.4rem;
+  box-shadow: $box-shadow-mobile;
   padding: 4.8rem 1.2rem;
 }
 
 @include respond-to($breakpoint-tablets) {
   .features-section-grid-main {
     padding: 6.4rem 1.6rem;
+    box-shadow: $box-shadow-tablet;
   }
 }
 
 @include respond-to($breakpoint-desktops) {
   .features-section-grid-main {
     padding: 9.6rem;
+    box-shadow: $box-shadow-desktop;
   }
 }
